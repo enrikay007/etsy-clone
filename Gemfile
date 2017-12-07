@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -7,23 +8,24 @@ end
 
 ruby "2.3.3"
 
+
 gem "mysql2", '~> 0.4.6' 
-gem "paperclip", "~> 5.0.0"
+gem "paperclip"
 
-
+gem 'stripe'
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
 
-# Use Puma as the app server
+# Use Puma as the app serverrail
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+#gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -42,6 +44,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 gem 'bower-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem "paperclip-dropbox", ">=1.1.7"
+gem "figaro"
 
 
 group :production do

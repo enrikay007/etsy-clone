@@ -91,6 +91,6 @@ Rails.application.configure do
 
 
 
-  # Reuired for devise , remember to change localhost to the production
-  #config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  # Required for devise , remember to change localhost to the production
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end

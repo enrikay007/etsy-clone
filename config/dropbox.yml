@@ -1,0 +1,6 @@
+app_key: "rymg19pkfem3smo"
+app_secret: <%= ENV["APP_SECRET"] %>
+access_token: "..."
+aceess_token_secret: "..."
+user_id: "..."
+access_type: "app_folder"

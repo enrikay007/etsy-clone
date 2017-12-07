@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Project1</title>
+    <%= favicon_link_tag 'favicon.png' %>
+    <title>Etsy.com | Shop for anything from creative people everwhere</title>
     <%= csrf_meta_tags %>
-
+	
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "https://js.stripe.com/v2/" %>
+    <%= tag :meta, :name => "stripe-key", :content => ENV["STRIPE_PUBLIC_KEY"] %>
   </head>
 
   <body>
   
 
 <%= render 'shared/header' %>
+<% if request.original_url == root_url %>
+<%= render 'shared/carousel' %>    
+  
+<% end %>
+
 <div class="container">
 	
 		  <% flash.each do |name, msg| %>
@@ -24,9 +32,15 @@
 		  <% end %>
 
     <%= yield %>
-<%= render 'shared/footer' %>    
 
 </div>
+<% if request.original_url == root_url %>
+<%= render 'shared/template' %> 
+<%= render 'shared/footer' %>    
+<% end %>
+
+<%= render 'shared/copyright' %>  
+
   </body>
 </html>
  
